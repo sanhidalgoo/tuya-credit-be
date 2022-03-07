@@ -1,8 +1,8 @@
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
+  <a href="https://www.figma.com/proto/DbWXskHqLeU3ZASzgA41mP/TuyaCart?node-id=183%3A129&scaling=scale-down&page-id=0%3A1&starting-point-node-id=183%3A129" target="_blank"><img src="https://user-images.githubusercontent.com/53051441/154882789-0c993f10-4216-456c-bf1a-51254b84079b.png" width="320" alt="CrediTuya Logo" /></a>
 </p>
 
-  <p align="center">Backend service for CrediTuya application made in <a href="https://nestjs.com/" target="_blank">NestJS</a> .</p>
+  <p align="center">Backend service for CrediTuya application made in <a href="https://nestjs.com/" target="_blank">NestJS</a></p>
     <p align="center">
 <img src="https://img.shields.io/github/issues/juansedo/tuya-credit-be?style=flat-square" alt="GitHub issues" />
 <img src="https://img.shields.io/github/stars/juansedo/tuya-credit-be?style=flat-square" alt="GitHub stars" />
