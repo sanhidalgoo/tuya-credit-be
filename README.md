@@ -63,6 +63,23 @@ $ npm run start:prod
 $ npm run test
 ```
 
+## Linters and formaters
+
+```bash
+# ESLint --fix
+npm run lint
+
+# prettier --write
+npm run format
+```
+
+If you have any conflict between `.prettierrc` and linter rules, please restart ESLint server.
+
+In VSCode, look for `ESLint: Restart ESLint Server`
+
+![image](https://user-images.githubusercontent.com/52968530/156955385-d5ef4ade-9a8c-42d0-97c9-cf140f3b82cb.png)
+
+
 ## Contributors
 
 |Username|Name||
