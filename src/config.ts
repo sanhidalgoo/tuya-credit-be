@@ -2,10 +2,11 @@ import { registerAs } from '@nestjs/config';
 
 export default registerAs('config', () => ({
   database: {
-    name: process.env.DATABASE_NAME,
-    user: process.env.DATABASE_USER,
-    password: process.env.DATABASE_PASSWORD,
-    host: process.env.DATABASE_HOST,
-    port: process.env.DATABASE_PORT,
+    connection: process.env.TYPEORM_CONNECTION,
+    name: process.env.TYPEORM_DATABASE,
+    user: process.env.TYPEORM_USERNAME,
+    password: process.env.TYPEORM_PASSWORD,
+    host: process.env.TYPEORM_HOST,
+    port: process.env.TYPEORM_PORT,
   },
 }));

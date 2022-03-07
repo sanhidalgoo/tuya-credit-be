@@ -2,17 +2,12 @@
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
   <p align="center">Backend service for CrediTuya application made in <a href="https://nestjs.com/" target="_blank">NestJS</a> .</p>
     <p align="center">
 <img src="https://img.shields.io/github/issues/juansedo/tuya-credit-be?style=flat-square" alt="GitHub issues" />
 <img src="https://img.shields.io/github/stars/juansedo/tuya-credit-be?style=flat-square" alt="GitHub stars" />
 <img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=flat-square" alt="Mantained" />
 </p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
 ## Description
 
@@ -29,6 +24,27 @@ A full backend service for CrediTuya application.
 ```bash
 $ npm install
 ```
+
+## Running the migrations
+
+```bash
+# generate new migrations from *.entity.ts modified
+npm run migrations:generate -- -n NAME # Change NAME
+
+# migrations up
+npm run migrations:run
+
+# show applied migrations
+npm run migrations:show
+
+# migrations revert
+npm run migrations:revert
+
+# drop the whole schema
+npm run migrations:drop
+```
+
+`src/database/migrations` is the migrations folder.
 
 ## Running the app
 
