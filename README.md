@@ -63,7 +63,7 @@ $ npm run start:prod
 $ npm run test
 ```
 
-## Linters and formaters
+## Linters and formatters
 
 ```bash
 # ESLint --fix
