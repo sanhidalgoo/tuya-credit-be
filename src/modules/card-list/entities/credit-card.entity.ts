@@ -1,7 +1,7 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
-@Entity()
-export class CardList {
+@Entity({ name: 'credit_cards' })
+export class CreditCard {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -17,7 +17,22 @@ export class CardList {
    * @example '1234'
    */
   @Column({ type: 'char', length: 4 })
-  last_digits: string;
+  lastDigits: string;
+
+  /**
+   * Credit card fee value
+   * @example '14900.00'
+   */
+  @Column({ type: 'decimal', precision: 6, scale: 2 })
+  fee: number;
+
+  /**
+   * Credit card fee mode
+   * @example 'Monthly'
+   * @example 'Monthly in use'
+   */
+  @Column({ type: 'varchar' })
+  feeMode: string;
 
   /**
    * Credit card capacity in COP

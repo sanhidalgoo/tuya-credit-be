@@ -1,5 +1,6 @@
-import { CardList } from 'src/modules/card-list/entities/card-list.entity';
+import { CreditCard } from 'src/modules/card-list/entities/credit-card.entity';
+import { Product } from 'src/modules/product/entities/product.entity';
 
 export const swaggerConfig = {
-  extraModels: [CardList],
+  extraModels: [CreditCard, Product],
 };
