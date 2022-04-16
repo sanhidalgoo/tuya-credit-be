@@ -1,8 +1,8 @@
 import { Exclude } from 'class-transformer';
-import { Entity, Column, PrimaryGeneratedColumn, UpdateDateColumn, CreateDateColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, UpdateDateColumn, CreateDateColumn, BaseEntity } from 'typeorm';
 
 @Entity({ name: 'credit_cards' })
-export class CreditCard {
+export class CreditCard extends BaseEntity {
   @Exclude()
   @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;
@@ -33,7 +33,7 @@ export class CreditCard {
    * Credit card fee value
    * @example '14900.00'
    */
-  @Column({ type: 'decimal', precision: 6, scale: 2 })
+  @Column({ type: 'decimal', precision: 15, scale: 2 })
   fee: number;
 
   /**

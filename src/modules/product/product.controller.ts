@@ -40,7 +40,7 @@ export class ProductController {
 
   @Post('/create')
   async create(@Body() data: ProductDto) {
-    const product = this.productService.create(data);
+    const product = await this.productService.create(data);
     return {
       statusCode: HttpStatus.CREATED,
       message: 'Product created successfully',
