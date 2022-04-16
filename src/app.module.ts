@@ -3,7 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
 import { MariadbDatabaseProviderModule } from './providers/database/mariadb/provider.module';
-import { CardListModule } from './models/card-list/card-list.module';
+import { CardListModule } from './modules/card-list/card-list.module';
 
 @Module({
   imports: [MariadbDatabaseProviderModule, CardListModule],
