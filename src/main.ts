@@ -2,11 +2,13 @@ import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 import { swaggerConfig } from 'src/config/swagger/configuration';
+import { ValidationPipe } from '@nestjs/common';
 
 async function bootstrap() {
   const isProd = process.env.NODE_ENV === 'production';
   const port = process.env.PORT || 3000;
   const app = await NestFactory.create(AppModule);
+  app.useGlobalPipes(new ValidationPipe());
 
   if (!isProd) {
     const config = new DocumentBuilder()

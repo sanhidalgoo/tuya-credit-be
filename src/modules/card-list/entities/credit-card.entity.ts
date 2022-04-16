@@ -1,7 +1,17 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Exclude } from 'class-transformer';
+import { Entity, Column, PrimaryGeneratedColumn, UpdateDateColumn, CreateDateColumn } from 'typeorm';
 
 @Entity({ name: 'credit_cards' })
 export class CreditCard {
+  @Exclude()
+  @CreateDateColumn({ name: 'created_at' })
+  createdAt: Date;
+
+  @Exclude()
+  @UpdateDateColumn({ name: 'updated_at' })
+  updatedAt: Date;
+
+  @Exclude()
   @PrimaryGeneratedColumn()
   id: number;
 
