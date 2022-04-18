@@ -1,5 +1,6 @@
 import { Exclude } from 'class-transformer';
 import { Entity, Column, PrimaryGeneratedColumn, UpdateDateColumn, CreateDateColumn, BaseEntity } from 'typeorm';
+import { User } from 'src/modules/user/entities/user.entity';
 
 @Entity({ name: 'credit_cards' })
 export class CreditCard extends BaseEntity {
@@ -64,4 +65,15 @@ export class CreditCard extends BaseEntity {
    */
   @Column({ type: 'decimal', precision: 5, scale: 4 })
   interestRate: number;
+
+  /**
+   * User key from Auth service
+   */
+  @Column({ type: 'varchar' })
+  userKey: string;
+
+  async getUser(): Promise<User> {
+    const user = await User.findOne({ userKey: this.userKey });
+    return user;
+  }
 }

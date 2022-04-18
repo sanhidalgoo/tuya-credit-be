@@ -7,10 +7,13 @@ import {
   UpdateDateColumn,
   BaseEntity,
   BeforeInsert,
+  Unique,
 } from 'typeorm';
 import * as bcrypt from 'bcrypt';
+import { CreditCard } from 'src/modules/card-list/entities/credit-card.entity';
 
 @Entity({ name: 'users' })
+@Unique(['document'])
 export class User extends BaseEntity {
   @Exclude()
   @CreateDateColumn({ name: 'created_at' })
@@ -74,5 +77,10 @@ export class User extends BaseEntity {
   async setPassword(password: string) {
     const salt = await bcrypt.genSalt();
     this.password = await bcrypt.hash(password || this.password, salt);
+  }
+
+  async getCards(): Promise<CreditCard[]> {
+    const cards = await CreditCard.find({ userKey: this.userKey });
+    return cards;
   }
 }

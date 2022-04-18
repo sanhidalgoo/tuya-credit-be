@@ -5,7 +5,6 @@ import {
   Get,
   HttpStatus,
   Param,
-  ParseIntPipe,
   Post,
   UseInterceptors,
 } from '@nestjs/common';
@@ -29,7 +28,7 @@ export class UserController {
   }
 
   @Get('/:id')
-  async findOne(@Param('id', ParseIntPipe) id: number) {
+  async findOne(@Param('id') id: string) {
     const product = await this.userService.findOne(id);
     return {
       statusCode: HttpStatus.OK,
@@ -49,7 +48,7 @@ export class UserController {
   }
 
   @Post('/:id/update')
-  async update(@Param('id', ParseIntPipe) id: number, @Body() data: UpdateUserDto) {
+  async update(@Param('id') id: string, @Body() data: UpdateUserDto) {
     const user = await this.userService.update(id, data);
     return {
       statusCode: HttpStatus.OK,
@@ -59,11 +58,21 @@ export class UserController {
   }
 
   @Post('/:id/remove')
-  async remove(@Param('id', ParseIntPipe) id: number) {
+  async remove(@Param('id') id: string) {
     await this.userService.destroy(id);
     return {
       statusCode: HttpStatus.OK,
       message: 'User deleted successfully',
+    };
+  }
+
+  @Get('/:id/cards')
+  async getCards(@Param('id') id: string) {
+    const cards = await this.userService.getCards(id);
+    return {
+      statusCode: HttpStatus.OK,
+      message: 'User cards fetched successfully',
+      data: cards,
     };
   }
 }
