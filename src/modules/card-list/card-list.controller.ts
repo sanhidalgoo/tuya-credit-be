@@ -9,10 +9,12 @@ import {
   Post,
   UseInterceptors,
 } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 import { CardListService } from './card-list.service';
 import { CreditCardDto } from './dtos/credit-card.dto';
 import { UpdateCreditCardDto } from './dtos/update-credit-card.dto';
 
+@ApiTags('Card List')
 @UseInterceptors(ClassSerializerInterceptor)
 @Controller('card-list')
 export class CardListController {
