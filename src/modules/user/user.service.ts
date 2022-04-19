@@ -16,6 +16,12 @@ export class UserService {
     return user;
   }
 
+  async findOneByEmail(email: string): Promise<UserDto> {
+    const user = await User.findOne({ email });
+    if (!user) throw new NotFoundException('User not found');
+    return user;
+  }
+
   async create(user: UserDto): Promise<UserDto> {
     const data = await User.findOne({ document: user.document });
     if (data) throw new ConflictException('User cannot be created');

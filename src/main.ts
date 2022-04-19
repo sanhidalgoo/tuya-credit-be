@@ -14,6 +14,7 @@ async function bootstrap() {
     const config = new DocumentBuilder()
       .setTitle('CrediTuya API')
       .setDescription('CrediTuya API Documentation for managing credit card purchase simulation')
+      .addBearerAuth()
       .setVersion('1.0')
       .build();
     const document = SwaggerModule.createDocument(app, config, swaggerConfig);
