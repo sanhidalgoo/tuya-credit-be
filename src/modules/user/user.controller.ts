@@ -6,12 +6,14 @@ import {
   HttpStatus,
   Param,
   Post,
+  UseGuards,
   UseInterceptors,
 } from '@nestjs/common';
 import { UserDto } from './dtos/user.dto';
 import { UpdateUserDto } from './dtos/update-user.dto';
 import { UserService } from './user.service';
-import { ApiParam, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiParam, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { JwtAuthGuard } from 'src/common/guards/jwt-auth.guard';
 
 @ApiTags('Users')
 @UseInterceptors(ClassSerializerInterceptor)
@@ -128,6 +130,7 @@ export class UserController {
     description: 'User document',
     type: Number,
   })
+  @ApiBearerAuth()
   @ApiResponse({
     status: 200,
     description: 'User cards fetched successfully (can be empty)',
@@ -136,6 +139,7 @@ export class UserController {
     status: 404,
     description: 'User not found',
   })
+  @UseGuards(JwtAuthGuard)
   @Get('/:id/cards')
   async getCards(@Param('id') id: string) {
     const cards = await this.userService.getCards(id);

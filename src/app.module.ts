@@ -6,14 +6,10 @@ import { MariadbDatabaseProviderModule } from './providers/database/mariadb/prov
 import { CardListModule } from './modules/card-list/card-list.module';
 import { ProductModule } from './modules/product/product.module';
 import { UserModule } from './modules/user/user.module';
+import { AuthModule } from './authentication/auth.module';
 
 @Module({
-  imports: [
-    MariadbDatabaseProviderModule,
-    CardListModule,
-    ProductModule,
-    UserModule,
-  ],
+  imports: [MariadbDatabaseProviderModule, CardListModule, ProductModule, UserModule, AuthModule],
   controllers: [AppController],
   providers: [AppService],
 })
