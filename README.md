@@ -7,6 +7,8 @@
 <img src="https://img.shields.io/github/issues/juansedo/tuya-credit-be?style=flat-square" alt="GitHub issues" />
 <img src="https://img.shields.io/github/stars/juansedo/tuya-credit-be?style=flat-square" alt="GitHub stars" />
 <img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=flat-square" alt="Mantained" />
+<br />
+<img src="https://github.com/juansedo/tuya-credit-be/actions/workflows/ci.yml/badge.svg" alt="NestJS CI" />
 </p>
 
 ## Description
