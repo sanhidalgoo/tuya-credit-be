@@ -17,7 +17,7 @@ on:
 
 jobs:
   build:
-    name: Ubuntu build
+    name: Ubuntu latest with Node.js
     runs-on: ubuntu-latest
     strategy:
       matrix:
