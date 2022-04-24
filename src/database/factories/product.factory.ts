@@ -1,9 +1,9 @@
-import Faker from '@faker-js/faker';
+import { faker } from '@faker-js/faker';
 import { define } from 'typeorm-seeding';
 
 import { Product } from '../../modules/product/entities/product.entity';
 
-define(Product, (faker: typeof Faker) => {
+define(Product, () => {
   const product = new Product();
   const price = Number(faker.commerce.price(100000, 1000000, 0, ''));
   product.ref = faker.random.alphaNumeric(10);

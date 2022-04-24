@@ -46,6 +46,12 @@ npm run migrations:drop
 
 `src/database/migrations` is the migrations folder.
 
+## Running the data seeders
+
+```bash
+npm run seeder:run
+```
+
 ## Running the app
 
 ```bash
@@ -84,12 +90,12 @@ In VSCode, look for `ESLint: Restart ESLint Server`
 
 |Username|Name||
 |------|-------|-----|
-|**hfbanilatq**|Hector Fabio Banilat Quintero|<a href="https://github.com/hfbanilatq"><img src="https://image.flaticon.com/icons/png/512/25/25231.png" width=20></a>|
-|**dcalleg707**|David Calle González|<a href="https://github.com/dcalleg707"><img src="https://image.flaticon.com/icons/png/512/25/25231.png" width=20></a>|
-|**juansedo**|Juan Sebastián Díaz Osorio|<a href="https://github.com/juansedo"><img src="https://image.flaticon.com/icons/png/512/25/25231.png" width=20></a>|
-|**sanhidalgoo**|Santiago Hidalgo Ocampo|<a href="https://github.com/sanhidalgoo"><img src="https://image.flaticon.com/icons/png/512/25/25231.png" width=20></a>|
-|**cmilojr**|Juan Camilo Jiménez Rojas|<a href="https://github.com/cmilojr"><img src="https://image.flaticon.com/icons/png/512/25/25231.png" width=20></a>|
-|**Jriosv**|Julián Ríos Vásquez|<a href="https://github.com/jriosv"><img src="https://image.flaticon.com/icons/png/512/25/25231.png" width=20></a>|
+|**hfbanilatq**|Hector Fabio Banilat Quintero|<a href="https://github.com/hfbanilatq"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width=30></a>|
+|**dcalleg707**|David Calle González|<a href="https://github.com/dcalleg707"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width=30></a>|
+|**juansedo**|Juan Sebastián Díaz Osorio|<a href="https://github.com/juansedo"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width=30></a>|
+|**sanhidalgoo**|Santiago Hidalgo Ocampo|<a href="https://github.com/sanhidalgoo"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width=30></a>|
+|**cmilojr**|Juan Camilo Jiménez Rojas|<a href="https://github.com/cmilojr"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width=30></a>|
+|**Jriosv**|Julián Ríos Vásquez|<a href="https://github.com/jriosv"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width=30></a>|
 
 
 ## License
