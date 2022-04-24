@@ -1,12 +1,11 @@
 import { Factory, Seeder } from 'typeorm-seeding';
-import { Connection } from 'typeorm';
 
 import { Product } from '../../modules/product/entities/product.entity';
 import { CreditCard } from '../../modules/card-list/entities/credit-card.entity';
 import { User } from '../../modules/user/entities/user.entity';
 
 export default class DatabaseSeeder implements Seeder {
-  public async run(factory: Factory, connection: Connection): Promise<void> {
+  public async run(factory: Factory): Promise<void> {
     // Product seeder
     await factory(Product)().createMany(30);
 
