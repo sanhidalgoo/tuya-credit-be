@@ -20,6 +20,8 @@
     "migrations:show": "npm run typeorm -- migration:show",
     "migrations:revert": "npm run typeorm -- migration:revert",
     "migrations:drop": "npm run typeorm -- schema:drop",
+    "seeder:config": "ts-node ./node_modules/typeorm-seeding/dist/cli.js config",
+    "seeder:run": "ts-node ./node_modules/typeorm-seeding/dist/cli.js seed",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
@@ -47,13 +49,16 @@
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0",
     "swagger-ui-express": "^4.3.0",
-    "typeorm": "^0.2.45"
+    "typeorm": "^0.2.45",
+    "typeorm-seeding": "^1.6.1"
   },
   "devDependencies": {
+    "@faker-js/faker": "^6.2.0",
     "@nestjs/cli": "^8.0.0",
     "@nestjs/schematics": "^8.0.0",
     "@nestjs/testing": "^8.0.0",
     "@types/express": "^4.17.13",
+    "@types/faker": "^6.6.9",
     "@types/hapi__joi": "^17.1.8",
     "@types/jest": "27.4.0",
     "@types/node": "^16.0.0",

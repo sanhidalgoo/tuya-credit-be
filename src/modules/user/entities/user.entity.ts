@@ -10,7 +10,7 @@ import {
   Unique,
 } from 'typeorm';
 import * as bcrypt from 'bcrypt';
-import { CreditCard } from 'src/modules/card-list/entities/credit-card.entity';
+import { CreditCard } from '../../card-list/entities/credit-card.entity';
 
 @Entity({ name: 'users' })
 @Unique(['document'])
