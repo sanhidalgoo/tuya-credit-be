@@ -1,0 +1,46 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: NestJS CI
+
+on:
+  push:
+    branches: 
+      - master
+      - release/*
+      - dev
+  pull_request:
+    branches: 
+      - master
+      - release/*
+      - dev
+
+jobs:
+  build:
+    name: Ubuntu latest with Node.js
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 16.x ]
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - run: npm ci
+    - run: npm run build --if-present
+    - run: npm test
+
+    - name: docker login
+      env:
+        DOCKER_USER: ${{secrets.DOCKERHUB_USER}}
+        DOCKER_PASS: ${{secrets.DOCKERHUB_PASS}}
+      run: |
+        docker login -u $DOCKER_USER -p $DOCKER_PASS
+    - name: Build the Docker image
+      run: docker build --build-arg TYPEORM_USERNAME="${{secrets.MARIADB_USER}}" --build-arg TYPEORM_PASSWORD="${{secrets.MARIADB_PASSWORD}}" --build-arg TYPEORM_DATABASE="${{secrets.MARIADB_DATABASE}}" --file Dockerfile --tag sanhidalgoo/tuya-credit-backend:latest .      
+    - name: Docker Push
+      run: docker push sanhidalgoo/tuya-credit-backend
